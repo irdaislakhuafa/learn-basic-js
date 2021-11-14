@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+
+<body>
+    <script>
+        // demo string template ${subtitusi}
+        const name = "Irda Islakhu Afa";
+        const firstName = "Irda",
+            middleName = "Islakhu",
+            lastName = "Afa";
+
+        const template = `Name : ${name}`;
+        const template1 = `Name : ${firstName} ${middleName} ${lastName}`;
+
+        console.log(template);
+        console.log(template1);
+
+        // expression in string template
+        const value = 70;
+        const template2 = `Name : ${name}, Nilai : ${value > 75}`;
+        console.log(template2);
+
+        // string template multiline
+        const template3 = `
+        Nama : ${name}
+        Usia : 19
+        Nama Depan : ${firstName}
+        Nama Tengah : ${middleName}
+        Nama Belakang : ${lastName}
+        `;
+        document.writeln("<pre>");
+        document.writeln(template3);
+        document.writeln("</pre>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi String & Number</title>
+</head>
+
+<body>
+    <script>
+        // konversi Number to String
+        const value1 = parseInt("1");
+        const value2 = 1;
+        document.writeln(`<p>${value1 + value2}</p>`);
+
+        // others conversions
+        document.writeln(`<p>${parseInt("1.9")}</p>`); // parseInt(), angka setelah koma(.) diabaikan
+        document.writeln(`<p>${parseFloat("1.2")}</p>`); // parseFloat(), angka setelah koma(.) tidak diabaikan/jadi float
+        document.writeln(`<p>${Number("1.2")}</p>`); // otomatis, kalau parameter nya int returnnya int klo float returnnya float
+
+        // toString()
+        const a = 1;
+        const b = 1;
+        const total = a.toString() + b.toString();
+        document.writeln(`<p>${total}</p>`);
+
+        // NaN
+        // with parseInt() and parseFloat(), kesalahan setelah angka masih ditoleran
+        document.writeln(`<p>${parseInt("angka 1")}</p>`); // NaN
+        document.writeln(`<p>${parseInt("1angka 1")}</p>`); // 1
+        document.writeln(`<p>${parseFloat("angka 1")}</p>`); // NaN
+        document.writeln(`<p>${parseFloat("1angka 1")}</p>`); // 1
+        document.writeln(`<p>${isNaN(parseFloat("angka 1"))}</p>`); // false
+        document.writeln(`<p>${isNaN(parseFloat("1angka 1"))}</p>`); // true
+
+        // with Number(), kesalahan tidak ditoleransi
+        document.writeln(`<p>${Number("angka1")}</p>`); // NaN
+        document.writeln(`<p>${Number("1angka1")}</p>`); // NaN
+        document.writeln(`<p>${isNaN(Number("1angka1"))}</p>`); // NaN
+
+        // apapun akan jadi NaN jika ditambah dengan NaN
+        const first = Number("salah bre"); // NaN
+        document.writeln(`<p>First = ${first + 1}</p>`); // NaN
+        document.writeln(`<p>${isNaN(first)}</p>`); // true
+        document.writeln(`<p>${isNaN(100)}</p>`); // false
+        document.writeln(`<p>${isNaN(NaN)}</p>`); // true
+    </script>
+</body>
+
+</html>

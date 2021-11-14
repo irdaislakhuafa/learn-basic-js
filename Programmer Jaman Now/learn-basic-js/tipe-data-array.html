@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Array</title>
+</head>
+
+<body>
+    <script>
+        // kosong
+        let arrayKosong = [];
+        console.table(arrayKosong); // membuat array kosong
+
+        // array names
+        console.info("Array Names");
+        let arrayNames = ["Irda", "Islakhu", "Afa", true, false, 1, 3]; // dynamic
+        console.table(arrayNames);
+
+        // memasukan data ke array
+        const names = [];
+        console.info("\n\nNames Table")
+        names.push("Irda"); // memasukan 1 data
+        names.push("Islakhu", "Afa", "Ana", "Ardani", true, false); // memasukan banyak data
+        console.table(names);
+        console.info(`Panjang Names : ${names.length} `); // panjang array
+
+        // memanggil elemen array
+        console.info(`Array index ke 2 = ${names[1]}`); // memanggil array index ke 2
+
+        // mengubah Names
+        console.info(`Setelah Names diubah`);
+        names[0] = "Ana";
+        names[1] = "Ardani";
+        names[2] = "Irda";
+        console.table(names);
+
+        // menghapus data
+        console.info(`Setelah didelete names[3]`);
+        delete names[3]; // datanya dihapus tapi indexnya tetap tidak bergeser, dan lengthnya tetap tidak berkurang
+        console.table(names);
+        console.info(`Panjangnya : ${names.length}`);
+
+        console.info("Menambah Ana lagi")
+        names.push(`Ana lagi`);
+        console.table(names);
+        console.table(`Panjangnya : ${names.length}`);
+
+        // coba array 2 dimensional
+        let array1 = [];
+        array1.push("A", "B", "C", "D");
+        console.table(array1);
+        let array2 = [true, false];
+        array1.push(array2);
+        console.table(array1);
+        console.info(`Array 2 Dimensi index [4][0] = ${array1[4][0]}`);
+    </script>
+</body>
+
+</html>

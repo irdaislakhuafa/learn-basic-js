@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Statement</title>
+</head>
+
+<body>
+    <script>
+        let value = "A",
+            message;
+
+        // switch statement
+        console.warn("With Switch")
+        switch (value) {
+            case "A":
+                message = "Anda lulus dengan sangat baik!";
+                break;
+            case "B":
+            case "C":
+                message = "Anda lulus";
+                break;
+            case "D":
+                message = "Anda tidak lulus";
+                break;
+            case undefined:
+                alert(`Bro variable value nilainya ${value}`);
+                break;
+            default:
+                message = "Mungkin anda salah jurusan :v"
+        }
+        console.info(message);
+
+        // if statement
+        console.warn("With If Else")
+        if (value === "A") {
+            message = "Anda lulus dengan sangat baik!";
+        } else if (value === "B" || value === "C") {
+            message = "Anda lulus";
+        } else if (value === "D") {
+            message = "Anda tidak lulus";
+        } else if (value === undefined) {
+            alert(`Bro variable value nilainya ${value}`);
+        } else {
+            message = "Mungkin anda salah jurusan :v"
+        }
+        console.info(message);
+    </script>
+</body>
+
+</html>

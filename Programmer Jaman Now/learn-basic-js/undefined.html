@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undefined</title>
+</head>
+
+<body>
+    <script>
+        // undefined
+        console.warn("example undefined");
+        let value;
+        if (value === undefined) {
+            console.info("undefined".toUpperCase());
+        } else {
+            console.info("defined".toUpperCase());
+        }
+        // array undefined
+        const values = ["Irda", "Islakhu", "Afa"];
+        console.info(((values[0] === undefined) ? "array undefined" : "array defined").toUpperCase());
+
+        delete values[0];
+        console.info(((values[0] === undefined) ? "array undefined" : "array defined").toUpperCase());
+    </script>
+</body>
+
+</html>

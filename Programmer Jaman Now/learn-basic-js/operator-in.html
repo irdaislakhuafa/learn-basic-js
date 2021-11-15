@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator In</title>
+</head>
+
+<body>
+    <script>
+        // returnnya Boolean
+
+        // object
+        console.warn("Object");
+        let person = {
+            firstName: "Irda",
+            lastName: "Islakhu Afa"
+        }
+
+        // check pake if
+        // console.warn("Pake If Else")
+        if ("firstName" in person) {
+            console.info(`Hello ${person.firstName}`);
+        } else {
+            console.info(`Hello Someone`);
+        }
+        // undefined/null ga peduli karena cuma ngecek ada atau nggak
+
+        // array
+        console.warn("Array")
+        let array = [null, undefined, "irda", true, 100];
+        console.table(array);
+        console.info(`apa ada index 1? ${1 in array}`);
+        delete array[1];
+        console.table(array);
+        console.info(`apa ada index 1? ${1 in array}`);
+    </script>
+</body>
+
+</html>

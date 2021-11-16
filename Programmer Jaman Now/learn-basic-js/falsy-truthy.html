@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falshy and Truthy</title>
+</head>
+
+<body>
+    <script>
+        // falsy value
+        // false, 0, -0, "", '', ``, null, undefined, NaN == falsy
+
+        let value;
+
+        // use if else
+        if (value) {
+            console.info("Ini TRUE -- " + value);
+        } else {
+            console.info("Ini FALSE -- " + value);
+        }
+
+        // use ternary
+        console.info(`\n${(value) ? "Ini TRUE" : "Ini FALSE"}`);
+    </script>
+</body>
+
+</html>

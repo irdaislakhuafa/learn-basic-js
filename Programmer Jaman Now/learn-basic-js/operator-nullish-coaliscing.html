@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Nullish Coaliscing</title>
+</head>
+
+<body>
+    <script>
+        //  ini mirip dengan TERNARY hanya saja untuk mengecek bahwa nilai null/undefined
+        let value = 0; // simulasi entah data dari mana
+
+        let secondValue = value;
+
+        //  if else
+        console.warn("If Else");
+        if (secondValue === null || secondValue == undefined) {
+            secondValue = "Ini nilai DEFAULT";
+        }
+        console.info(`Nilai secondValue : ${secondValue}`);
+
+        // nullish kok formaternya ngawur :v
+        console.warn("Nullish")
+        const status = secondValue ?? "Ini nilai DEFAULT dengan Nullish"; // apakah value == null/undefined? jika iya ubah nilainya dengan ""
+        console.info(status);
+    </script>
+</body>
+
+</html>

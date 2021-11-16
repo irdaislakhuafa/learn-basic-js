@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+
+<body>
+    <script>
+        // operator optional chaining (?) mirip ternary tapi beda mangsud
+        let object = {
+
+        };
+
+        // misal gini
+        // console.info("Start");
+        // console.info(object.person.name);
+        // console.info("End"); // kalau undefined dan dipaksa akses propertinya lagi akan stop/berhenti
+
+        // jadi pake ini aja optional chaining
+        console.info("Start");
+        console.info(object?.person?.name);
+        console.info("End");
+    </script>
+</body>
+
+</html>

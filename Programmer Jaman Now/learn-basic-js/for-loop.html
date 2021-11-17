@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+
+<body>
+    <script>
+        // PERATURAN
+        // init statement/initialisasi, kondisi, dan post statement tidak wajib diisi. jika kondisi tidak diisi maka akan dianggap true  
+
+        // example
+        // for loop
+        /* for (initialiasasi; kondisi; post statement) {
+            code here
+        } */
+
+        let limit = 3;
+        // example 1
+        /* 
+        for (;;) {
+            alert(`<p>Looping infinity</p>`);
+        } 
+        */
+
+        // example 2
+        document.writeln("<b>Example 1</b>");
+        let value1 = 1;
+        for (; value1 <= limit;) {
+            document.writeln(`<p>Looping ke ${value1}</p>`);
+            value1++;
+        }
+
+        // example 2
+        document.writeln("<b>Example 2</b>");
+        for (let value2 = 0; value2 <= limit;) {
+            document.writeln(`<p>Looping ke ${value2}</p>`);
+            value2++;
+        }
+
+        // example 3
+        document.writeln(`<b>Example 3</b>`);
+        for (let value3 = 0; value3 <= limit; value3++) {
+            document.writeln(`<p>Looping ke ${value3}</p>`);
+        }
+    </script>
+</body>
+
+</html>

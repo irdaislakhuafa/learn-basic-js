@@ -15,11 +15,23 @@
         console.info("" || []); // []
         console.info("" || {}); // {}
         console.info("ENOL 1" || "ENOL 11"); // yang pertama didahulukan
-        console.info(0 || "NOL"); // NOL
+        console.info(0 || "NOL"); // NOL  
         console.info(null || "Ini Null"); // Ini Null
         console.info(undefined || "Ini Undefined"); // Ini Undefined
         console.info(true || false); // true
+        console.info("" || false); // jika keduanya null maka yg terakhir yg dieksekusi
+
+        //  kapan kita pake ini?
+        // misal
+        let person = {
+            firstName: "",
+            lastName: "Islakhu Afa"
+        }
+        let name = person.firstName || person.lastName;
+        console.warn("Test ");
+        console.info(`Name : ${name}`); // "Islakhu Afa"
+        
     </script>
 </body>
-
+  
 </html>

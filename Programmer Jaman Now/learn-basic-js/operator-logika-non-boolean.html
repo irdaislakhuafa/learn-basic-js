@@ -10,8 +10,8 @@
 
 <body>
     <script>
-        // operator OR (||)
-        // dicari yang TRUSTY
+        // operator OR (||) mengambil dicari yang TRUSTY
+        console.warn("OR (||)");
         console.info("hello world" || ""); // hello world
         console.info("" || []); // []
         console.info("" || {}); // {}
@@ -29,8 +29,19 @@
             lastName: "Islakhu Afa"
         }
         let name = person.firstName || person.lastName;
-        console.warn("Test ");
+        console.info("\n\n\n");
         console.info(`Name : ${name}`); // "Islakhu Afa"
+
+        // operator AND (&&) mengambil FALSY
+        console.warn("AND (&&)");
+        console.info("hello world" && ""); // ""
+        console.info("" && []); // ""
+        console.info("" && {}); // ""
+        console.info(null && undefined); // null, yang pertama yang diambil
+        console.info(undefined && "Ini undefined"); // undefined
+        console.info("True 1" && "True 2"); // yang true terakhir yang diambil
+        console.info(true && false); // false
+        console.info("" && false) // ""
     </script>
 </body>
 

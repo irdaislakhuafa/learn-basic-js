@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and Continue</title>
+</head>
+
+<body>
+    <script>
+        // break
+        document.writeln("<b>Break</b>")
+        let value = 1,
+            limit = 5;
+        while (true) {
+            document.writeln(`<p>Hai ke ${value}</p>`);
+
+            if (value >= limit) {
+                break;
+            }
+
+            value++;
+        }
+        value = 0;
+
+        // continue
+        document.writeln("<b>Continue</b>")
+        while (value <= limit) {
+            // console.info(`${value}`)
+
+            value++;
+            if (value % 2 === 0) {
+                document.writeln(`<p>Oii ke ${value}</p>`);
+                continue;
+            }
+        }
+    </script>
+</body>
+
+</html>

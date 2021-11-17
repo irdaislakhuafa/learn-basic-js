@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In</title>
+</head>
+
+<body>
+    <script>
+        // for in 
+        // object
+        console.warn("Object")
+        const person = {
+            firstName: 'Irda',
+            middleName: 'Islakhu',
+            lastName: 'Afa'
+        }
+
+        for (let propertyName in person) { // propertyName mewakili Field/property nya bukan datanya
+            console.info(`Field Name : ${propertyName} -> Value : ${person[propertyName]}`);
+        }
+
+        // array
+        console.warn("Array")
+        const array = ["Irda", "Islakhu", "Afa"];
+        for (let index in array) {
+            console.info(`Index ke ${index} -> Value : ${array[index]}`)
+        }
+    </script>
+</body>
+
+</html>

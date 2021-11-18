@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Statement</title>
+</head>
+
+<body>
+    <script>
+        // with statement (tisak direkomendasikan)
+        let person = {
+            firstName: 'Irda',
+            middleName: 'Islakhu',
+            lastName: 'Afa'
+        }
+
+        // without with statement
+        console.warn("Without With Statement")
+        console.info(person.firstName);
+        console.info(person.middleName);
+        console.info(person.lastName);
+
+        // with statement
+        console.warn("With With Statement")
+        with(person) {
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        // tidak direkomendasikan karena ini
+        console.warn("Tidak Direkomendasikan")
+        let firstName = "Ana";
+        let lastName = "Ardani";
+        with(person) {
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Rest Parameter</title>
+</head>
+
+<body>
+    <script>
+        // ATURAN FUNCTION REST PRAMETER // unlimited parameter
+        // 1. Rest Parameter adalah fitur dimana kita bisa mengirim data sebanyak-banyak nya pada satu prameter, dan secara otomatis dikonversi menjadi array
+        // 2. Rest Parameter hanya boleh ada satu function, tidak boleh lebih dari satu
+        // 3. Rest Parameter hanya boleh diletakan diposisi paling akhir, tidak boleh ditengah/awal
+        // 4. Di bahasa pemrograman lain disebut variable argument
+
+        // membuat function dengan Rest Parameter
+        function jumlah(name, ...values) {
+            let total = 0;
+            // console.info(typeof(values));
+            for (let value of values) {
+                total += value;
+            }
+            console.info(`Total : ${name} is ${total}`);
+        }
+
+        // memanggil function
+        jumlah("Apel") // Total Apel is 0
+        jumlah("Apel", 1, 2, 3, 4, 5) // Total Apel is 15
+        jumlah("Apel", "abcdefg") // Total Apel is 0abcdefg
+
+        // mengirim array ke Rest Parameter
+        console.warn("Mengirim array ke Rest Parameter");
+        let array = [10, 10, 10, 10, 10];
+        jumlah("Apel", ...array) // Total Apel is 50
+
+        // membuat function dengan Arguments (versi lama dari Rest Parameter)
+        function oldJumlah() { // tanpa parameter
+            let total = 0;
+            console.table(arguments); // value ototamis disimpan didalam variable arguments
+            for (const value of arguments) {
+                total += value;
+            }
+            console.info(`Total Arguments is ${total}`);
+        }
+        // memanggil function 
+        oldJumlah(10, 10, 10, 10, 10);
+
+        // disarankan pke Rest Parameter
+    </script>
+</body>
+
+</html>

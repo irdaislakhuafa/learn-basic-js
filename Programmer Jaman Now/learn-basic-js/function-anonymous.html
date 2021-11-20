@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonimous Fuction</title>
+</head>
+
+<body>
+    <script>
+        // membuat anonymous function (function tanpa tanpa nama)
+
+        console.warn("Anonymous Function dimasukan ke variable ")
+        const say = function(name) { // function tanpa nama dan dimasukan kedalam variable 
+            console.log(`Hallo ${name}`);
+        }
+
+        // memanggil function
+        say("Irda Islakhu Afa");
+        say("Ana Ardani");
+
+        // function sebagai parameter
+        console.warn("Anonymous Function sebagai parameter langsung");
+        // membuat function giveMeName()
+        function giveMeName(saySomething) {
+            saySomething("Haiiii");
+        }
+
+        // giveMeName(say); // bisa aja kek gini tapi tapi jgn dulu
+        giveMeName(
+            function() {
+                document.writeln("Oi ini function sebagai parameter")
+                console.log("Oi ini function sebagai parameter")
+            }
+        ); // tapi ga bisa reusable jdi lebih enak dipake 1 kali
+        giveMeName(
+            function() {
+                document.writeln("Oi ini function sebagai parameter")
+                console.log("Oi ini function sebagai parameter")
+            }
+        )
+        giveMeName(
+                function() {
+                    document.writeln("Oi ini function sebagai parameter")
+                    console.log("Oi ini function sebagai parameter")
+                }
+            ) // kek gini
+    </script>
+</body>
+
+</html>

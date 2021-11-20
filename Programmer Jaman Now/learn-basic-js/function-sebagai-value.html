@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Sebagai Value</title>
+</head>
+
+<body>
+    <script>
+        // function bisa disimpan didalam variable
+
+        // membuat function
+        // function di variable
+        console.warn("Function di variable")
+
+        function sayHello(name) {
+            console.info(`Hello ${name}`);
+        }
+
+        // menyimpan function kedalam variable/sebagai value
+        let say = sayHello; // tanpa () karena bukan memanggil function
+        sayHello("Susanto");
+        say("Susanti"); // say == sayHello
+
+        // function di parameter
+        console.warn("Function di parameter")
+
+        // membuat function giveMeName
+        function giveMeName(functionAsParameter) {
+            functionAsParameter("Anu");
+        }
+        giveMeName(sayHello); // tanpa () karena bukan memanggil function
+        giveMeName(say);
+
+        // hanya percobaan
+        giveMeName(function(name) {
+            console.info("Value : " + name)
+        }); // try it
+    </script>
+</body>
+
+</html>

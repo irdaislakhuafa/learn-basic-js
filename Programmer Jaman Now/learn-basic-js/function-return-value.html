@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+
+<body>
+    <script>
+        // ATURAN
+        // parameter di JS itu optional jadi bisa saja memanggil function tanpa parameter walau fuction tersebut memiliki parameter 
+
+        // membuat functions dengan return value
+        function yourName(firstName, lastName) {
+            return `Hello ${firstName} ${lastName}`;
+        }
+
+        // memanggil function yourName()
+        let name = yourName("Irda", "Islakhu Afa");
+        console.warn("With function")
+        console.info(name);
+
+        // membuat functions dengan return value berubah2
+        console.warn("With function and different value return")
+
+        function getStringValueFrom(value) {
+            let result;
+            if (value >= 90) {
+                result = "a";
+            } else if (value >= 80) {
+                result = "b";
+            } else if (value >= 70) {
+                result = "c";
+            } else if (value >= 60) {
+                result = "d";
+            } else {
+                result = "e";
+            }
+            // mengembalikan hasil
+            return result.toUpperCase();
+        }
+        let stringValue = getStringValueFrom(80);
+        console.info(stringValue);
+
+        // menghentikan program dengan return
+        console.warn("Stop program with return");
+
+        function isArrayContainsValue(array, value) {
+            for (let arrayValue of array) {
+                if (arrayValue === value) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        let array = ["Ana", 1, false, "ANU", 0];
+        let value = "Ana"
+
+        let result = isArrayContainsValue(array, value);
+        console.info(`Value is : ${result}`);
+    </script>
+</body>
+
+</html>

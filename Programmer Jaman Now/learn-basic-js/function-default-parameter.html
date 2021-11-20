@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuction Default Parameter</title>
+</head>
+
+<body>
+    <script>
+        // default parameter akan dipakai jika parameter yang dikirimkan ke function undefined/tidak ada
+
+        // membuat function dengan default parameter
+        function data(name, gender = "Waria") {
+            console.info(`Name : ${name} -> Gender : ${gender}`);
+        }
+
+        // memanggil function
+        data("Irda", "Laki-Laki") // name = "Irda" -- gender = "Laki-Laki"
+        data("Ana", "Perempuan") // name = "Ana" -- gender = "Perempuan"
+        data("Lucita luna"); // name = "Lucita luna" -- gender = "Waria"
+        data(); // name = undefined -- gender = "Waria"
+        data("Anu", null); // name = "Anu" -- gender = null
+        data("Anu", false); // name = "Anu" -- gender = false
+    </script>
+</body>
+
+</html>

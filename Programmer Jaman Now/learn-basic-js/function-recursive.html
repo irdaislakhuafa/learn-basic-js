@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Function</title>
+</head>
+
+<body>
+    <script>
+        // learn recursive function
+
+        let value = 5;
+
+        // contoh bilangan faktorial : factorial(5) = 1 * 2 * 3 * 4 * 5 = 120, dibalik atau nggak terserah ga ngaruh hasilnya sama
+        // menggunakan example factorial fucntion
+        // dengan looping
+        function factorialWithLooping(value) {
+            let result = 1;
+            for (let i = 1; i <= value; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // memanggil factorialWithLooping
+        console.warn("Factorial with looping");
+        console.log(factorialWithLooping(value));
+
+        // factorial dengan fungsi recursive
+        function factorialWithRecirsiveFunction(value) {
+            return (value == 1) ? 1 : value * factorialWithRecirsiveFunction(value - 1);
+        }
+
+        // memanggil factorialWithRecursiveFunction
+        console.warn("Factorial with recursive function");
+        console.log(factorialWithRecirsiveFunction(value));
+
+        // logic
+        // 5 * factorialWithRecursiveFunction(4)
+        // 5 * 4 * factorialWithRecursiveFunction(3)
+        // 5 * 4 * 3 * factorialWithRecursiveFunction(2)
+        // 5 * 4 * 3 * 2 * factorialWithRecursiveFunction(1)
+        // 5 * 4 * 3 * 2 * 1 // keluar
+
+        // demo perulangan tanpa for/while/do while loop
+        console.warn("Looping without for/while/do while");
+
+        console.warn("Example 1");
+
+        function loop(value) {
+            let i = 0;
+            console.log(value);
+            return (value == 0) ? value : loop(value - 1);
+        }
+        loop(10);
+
+        console.warn("Example 2");
+
+        function looping(start, end) {
+            console.log((start > end) ? "TOLOL" : `Looping ke : ${start}`);
+            (start == end) ? end: looping(start + 1, end);
+        }
+
+        looping(10, 1); // done wwkwkwkwk
+    </script>
+</body>
+
+</html>

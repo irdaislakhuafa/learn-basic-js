@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+
+<body>
+    <script>
+        // learn scope
+        console.warn("Scope 1");
+
+        // global scope
+        let variable = 0;
+
+        // global scope
+        function function1() {
+            // local scope function1
+            variable++;
+        }
+
+        // global scope
+        function function2() {
+            // local scope function2
+            // ga bisa di akses dari luar
+        }
+
+        // call functions
+        function1();
+        function1();
+
+        console.log(variable);
+
+        // learn scope 2
+        console.warn("Scope 2")
+
+        // global scope 
+        function first() {
+            // local scope first
+            let firstVariable = "This is first variable";
+            console.log(firstVariable); // bisa
+        }
+
+        // global scope
+        function second() {
+            // local scope second
+            let secondVariable = "This is second variable";
+            try {
+                console.log(firstVariable); // error firstVariable is not defined
+            } catch (error) {
+
+            }
+        }
+
+        // memanggil functions
+        first();
+        second();
+
+        // global scope
+        try {
+            console.log(firstVariable); // error firstVariable is not defined
+            console.log(secondVariable); // error secondVariable is not defined
+        } catch (error) {
+
+        }
+
+        // learn scope 3
+        console.warn("Scope 3");
+
+        function firstNested() {
+            let firstNestedVariable = "First nested variable";
+
+            function secondNested() {
+                console.log(firstNestedVariable);
+                let secondNestedVariable = "Second nested variable";
+            }
+
+            // memanggil function secondNested()
+            secondNested();
+            console.log(secondNestedVariable); // error secondNestedVariable is not defined
+        }
+        // memanggil function firstNested()
+        firstNested();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+
+<body>
+    <script>
+        // APA ITU FUNCTION GENERATOR
+        // - Function generator adalah fungsi yang digunakan untuk membuat data generator
+        // - Generator adalah data yang dapat di iterasi (istilah umum untuk mengambil setiap item dari sesuatu, satu demi satu) seperti array tapi bukan array
+        // - Untuk membuat function generator kita perlu menambahkan tanda * (bintang) setelah kata "function" baru nama function nya
+        // - Dan untuk mengembalikan nilai disetiap iterasi kita bisa menambahkan kata kunci yield baru di ikuti datanya (tanpa memberi kata return)
+        // - hanya bisa di iterasi, tapi tidak memiliki index
+
+        // example 0
+        console.warn("Example 0");
+
+        // default value
+        const defaultValue = 10;
+
+        // membuat function generator sederhana
+        function* generateNames() {
+            yield "Irda";
+            yield "Islakhu";
+            yield "Afa";
+            yield "Ana";
+            yield "Ardani";
+            // tanpa return
+        }
+
+        // valuenya saya simpen ke variable names
+        const names = generateNames(); // mirip array tapi bukan array
+        // menampilkan data names tanpa looping
+        console.warn("Tanpa Looping");
+        console.table(names); // hasilnya ngaco
+
+        // menampilkan data names dengan looping
+        console.warn("Dengan Looping");
+        for (let name of names) {
+            console.log(name);
+        }
+
+        // apakah bisa diakses dengan index?
+        console.warn("Tidak bisa diakses dengan index");
+        console.log(names[0]);
+
+        // example 1
+        console.warn("Example 1");
+
+        // memebuat fungsi untuk membuat angka ganjil menggunakan function generator
+        function* generateOddValues(value) {
+            console.log("DATA HANYA EKSEKUSI KETIKA DATA SEBELUMNYA DIPANGGIL");
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.log(`Yield ke : ${i}`); // data hanya ditampilkan ketika data sebelumnya dipanggil
+                    yield i;
+                }
+            }
+        }
+
+        // menyimpan data dari generateOddValues ke variable
+        const oddValues = generateOddValues(defaultValue);
+        // console.table(oddValues) // nggak bisa langsung di tampilkan harus di iterasi/pke looping
+        // menampilkan value oddValues
+        console.warn("Menampilkan Data Ganjil (Function Generator)");
+        for (let oddValue of oddValues) {
+            console.log(oddValue)
+        }
+
+        // DATA GENERATOR BERSIFAT LAZY/malas
+        // - Artinya jika data belum kita ambil dari generator maka yield selanjutnya tidak akan di eksekusi // lebih hemat memori dan komputasi
+
+
+        // memanggil value data generator tanpa looping (pake fungsi bawaan generater namanya .next())
+        console.warn("memanggil data generator tanpa looping");
+        const oddValuesSecond = generateOddValues(defaultValue);
+        console.log(oddValuesSecond.next().value); // 1
+        console.log(oddValuesSecond.next().value); // 3
+        console.log(oddValuesSecond.next().value); // 5
+        console.log(oddValuesSecond.next().done); // false tapi yieldnya dipanggil
+        console.log(oddValuesSecond.next().value); // 7
+        console.log(oddValuesSecond.next().done); // true
+
+
+        // berbeda dengan array seperti dibawah
+        // membuat angka ganjil dengan array
+        console.warn("Angka Ganjil dengan array");
+
+        function generateOddValuesWithArray(value) {
+            let array = [];
+            console.log("DISINI DIJALANKAN DULU SEMUA");
+            for (let i = 1; i <= value; i++) {
+                (i % 2 === 0) ? null: console.log(
+                    `Looping ke : ${i}${array.push(i)}`
+                ); // semua disini dilakukan dulu baru di return dimana fungsi ini di panggil 
+            }
+            return array;
+        }
+
+        // menyimpan data array ke variable (console.log di fungsi dijalankan semua bahkan sebelum ditampilkan)
+        const oddArrayValues = generateOddValuesWithArray(defaultValue);
+
+        // menampilkan data array 
+        console.log("BARU DITAMPILKAN KESINI");
+        for (let arrayValue of oddArrayValues) {
+            console.log(arrayValue); // menampilkan elemen array
+        }
+    </script>
+</body>
+
+</html>

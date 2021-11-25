@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <script>
+        // PERATURAN CLOSURE
+        /* 
+            => CLosure adalah kombinasi function dan bundel referensi ke data disekitarnya (mirip getter kalau di java)
+        */
+
+        // membuat nested function sederhana
+        const firstFunction = (firstValue, owner) => {
+            let someone = `Owner is ${owner}`;
+
+            // membuat nested function
+            const secondFunction = (secondValue) => {
+                console.log(someone);
+                return firstValue + secondValue;
+            }
+
+            // mengeluarkan/mengembalikan secondFunction keluar dari blok firstFunction
+            return secondFunction; // tidak menggunakan () karena bukan untuk dijalankan
+        }
+
+        // example 0
+        console.warn("Example 0");
+        let addWithTwo = firstFunction(2, "Irda Islakhu Afa"); // default = 2, disini mengembalikan secondFunction
+        console.log(addWithTwo(10)); // 2 + 10 = 12
+        console.log(addWithTwo(20)); // 2 + 20 = 22
+        console.log(addWithTwo(30)); // 2 + 30 = 32
+
+        // example 1
+        console.warn("Example 1");
+        let addWithTen = firstFunction(10, "Ana Ardani"); // default = 10, disini mengembalikan secondFunction
+        console.log(addWithTen(10)); // 10 + 10 = 20
+        console.log(addWithTen(20)); // 10 + 20 = 30
+        console.log(addWithTen(30)); // 10 + 30 = 40
+    </script>
+</body>
+
+</html>

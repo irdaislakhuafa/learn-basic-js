@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter and Setter</title>
+</head>
+
+<body>
+    <script>
+        // GETTER DAN SETTER (mirip getter dan setter di java)
+        /* 
+            => Getter dan Setter adalah kemampuan membuat function yang berbeda untuk mengambil data (Getter) dan mengubah data (Setter) pada sebuah property dalam object
+            => Dengan menggunakan Getter dan setter kita bisa melakukan hal apapun dalam function sebelum sebuah property diakses atau diubah, misal menambah validasi dan lain-lain.
+        */
+
+        // membuat object person
+        /* const person = {
+            firstName: 'Irda',
+            lastName: 'Islakhu Afa',
+            fullName: this.firstName + ' ' + this.lastName // ini error
+         }
+         
+         console.log(person) */ // ini ga bisa wkwkwkwk
+
+        // mencoba membuat object person
+        // example 0
+        console.warn('Example 0'); // ketika membuat getter dan setter wajib didalam object
+        let person = {
+            firstName: 'Otong',
+            lastName: 'Surotong',
+            // getter
+            get fullName() { // membuat getter untuk field fullName gabungan dari firstName dan lastName
+                return `${this.firstName} ${this.lastName}`; // getter ini mengembalikan sebuah value
+            }, // fullName ini akan otomatis menjadi property
+            // setter
+            set fullName(value) {
+                const values = value.split(' ');
+                this.firstName = values[0];
+                this.lastName = values[1];
+                for (let i = 2; i < values.length; i++) {
+                    this.lastName += ` ${values[i]}`;
+                }
+            }
+        }
+
+        // menampilkan getter fullName
+        console.log(person.fullName)
+
+        // example 1
+        console.warn('Example 1');
+        console.warn("Ke 1");
+        person.firstName = "Anu"; // bisa
+        console.table(person);
+
+        console.warn("Ke 2");
+        person.fullName = "Irda Islakhu Afa"; // ga bisa, maka dari itu kita gunakan setter
+        console.table(person);
+
+        // membuat setter
+        // person.fullName = {
+        //         set fullName(value) {
+        //             return value;
+        //         }
+        //     } // gabisa w/kwkwk
+
+        // doi tau kapan setter dan kapan getter secara otomatis
+        person.fullName = "Irda Islakhu Afa dan Ana Ardani"; // bisa tapi gabisa kalau tanpa setter
+        console.log(person.fullName);
+
+        // let anu = "Irda Islakhu Afa";
+        // console.table(anu.split(" ")); // "Irda", "Islakhu", "Afa"
+        person.fullName = "Otong surotong";
+        console.log(person.fullName);
+        person.fullName = "Ucup surucup";
+        console.log(person.fullName);
+        person.fullName = "Otong surutong";
+        console.log(person.fullName);
+    </script>
+</body>
+
+</html>

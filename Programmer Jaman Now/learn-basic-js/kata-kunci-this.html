@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+</head>
+
+<body>
+    <script>
+        // KATA KUNCI THIS (dah faham lah ya kalau di java)
+        /* 
+            => Kata kunci this adalah referensi ke object milik siapa
+            => Tiap lokasi kata kunci this bisa berbeda beda referensi pemiliknya
+            => Dalam Object Method this merupakan referensi ke Object pemilik method nya
+            => Dalam global scope this merupakan referensi ke global object (kalau di browser biasanya window)
+            => Dalam function this merupakan referensi ke global object (kalau di browser biasanya window)
+            => Di function dengan strict mode (akan dibahas nanti), this adalah undefined
+            => Dalam event this merupakan referensi ke element yang menerima event (akan dibahas dimateri DOM (Document Object Model)) 
+        */
+
+        // example 0
+        console.warn("Example 0");
+        // langsung menampilkan this
+        console.log("Langsung menampilkan this")
+        console.log(this); // mereferensi ke window browser, this = window
+
+        // memanggil this di function
+        console.log("Memanggil this di function");
+
+        function firstFunction() {
+            console.log(this); // window
+        }
+
+        // memanggil firstFunction
+        firstFunction();
+
+        // memanggil this di nested function
+        console.log("Memanggil this di nested function");
+
+        function firstFunctionNested() {
+            function secondFunction() {
+                console.log(this); // window
+            }
+            secondFunction();
+        }
+        // memanggil firstFunctionNested
+        firstFunctionNested();
+
+        // example 1
+        console.warn("Example 1");
+        console.log("this di object".toUpperCase());
+
+        // membuat object person
+        const person = {
+                name: "Otong",
+                sayHello: function(name) {
+                    // console.log(`Hello ${name} my name is ${name}`); ucup => ucup
+                    // console.log(`Hello ${name} my name is ${person.name}`); ucup => otong
+                    console.log(`Hello ${name} my name is ${this.name}`); // ucup => otong, this = person
+                }
+            }
+            // memanggil sayHHello dari object person
+        person.sayHello("Ucup")
+    </script>
+</body>
+
+</html>

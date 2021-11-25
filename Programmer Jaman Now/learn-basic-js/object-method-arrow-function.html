@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        // ARROW FUNCTION DI OBJECT
+        /* 
+            => Sebelumnya kita sudah membahas tentang arrow function
+            => Arrow function juga bisa kita gunakan sebagai object method sama seperti anonymous function (function tanpaname)
+            => Namun perlu diketahui, arrow menggunakan arguments object (mirip rest parameter), function generator (yield), kata kunci this/super (akan dibahas di javascript OOP)
+            => Jadi pastikan menggunakan arrow function hanya jika kita tidak butuh fitur2 di atas
+        */
+
+        // example 0
+        console.warn("Example 0");
+        // membuat object person
+        const person = {
+            name: "Otong",
+            // sayHello: (name = "TOLOL") => console.log(`Hello ${name} my name is ${this.name}`) // this disini ga bisa(malah ke window bukan person) karena arrow function
+            sayHello: (name = "TOLOL") => console.log(
+                    `Hello ${name} my name is ${person.name}`) // sebagai gantinya panggil objectnya langsung
+        }
+
+        // memanggil function person sayHello
+        person.sayHello("Ucup");
+    </script>
+</body>
+
+</html>

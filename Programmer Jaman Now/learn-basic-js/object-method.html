@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method</title>
+</head>
+
+<body>
+    <script>
+        // OBJECT METHOD (mirip seperti fungsi non static(milik object) di java)
+        /* 
+            => Pada tipe data object, kita sudah membahas tentang property di object
+            => Karena sebenarnya function juga merupakan salah satu tipe data, jadi function pun sebenarnya bisa ditambahkan sebagai property di object (mirip function non static di java)
+            => Cara membuatnya sama seperti function sebagai value di variable
+            => Function di object kadang disebut sebagai Object Method
+        */
+
+        // example 0
+        console.warn("Example 0");
+        // membuat object method
+        let person = { // pake let biar bisa diubah2 wkwkwkwk 
+            name: "Irda Islakhu Afa", // sebagai contoh kalau divalue
+            sayHello: (name = "TOLOL") => { // sebagai contoh kalau function dengan parameter name
+                console.log(`Hello ${name}`);
+            }
+        }
+
+        // memanggil fungsi sayHello didalam object person
+        console.log(person)
+        person.sayHello("Ana Ardani");
+
+        // example 1
+        console.warn("Example 1");
+
+        // membuat function dulu baru dimasukin ke object
+        const sayHello = (name = "TOLOL") => console.log(`Hello ${name}`);
+
+        // mengubah property object person
+        person = {
+            name: "Ana Ardani",
+            sayHello: sayHello
+        }
+
+        // memanggil function
+        console.log(person)
+        person.sayHello("Irda Islakhu Afa");
+        person.sayHello();
+
+        // example 2
+        console.warn("Example 2");
+        console.log(`Menambah Method ke Object`);
+
+        // mengubah property object person
+        person = {
+            name: "Irda Islakhu Afa"
+        }
+        console.log("Sebelum");
+        console.log(person);
+        // person.sayHello("Irda Islakhu Afa"); // error
+
+        // menambah function ke property object person
+        person.sayHello = sayHello;
+        console.log("Sesudah");
+        console.log(person)
+        person.sayHello("Ana Ardani"); // success
+    </script>
+</body>
+
+</html>
